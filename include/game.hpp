@@ -4,6 +4,7 @@
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include <iostream>
 #include "gridelement.hpp"
+#include "graphics.hpp"
 
 #define PIXEL_SIZE 1
 
@@ -13,13 +14,12 @@ public:
     Game();
     ~Game();
     Grid_Element *elements[400];
-    void drawpx(uint16_t x, uint16_t y, const SDL_Color &c);
-    void drawelement(Grid_Element &element);
     SDL_Keysym getkeypress();
     SDL_Keysym waitkeypress();
-    uint16_t screen_height;
-    uint16_t screen_width;
+
     bool shouldexit;
+
+    Graphics graphics;
 
 private:
     SDL_Window *w;

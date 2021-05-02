@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     game = new Game();
     while (!game->shouldexit)
     {
-        game->drawpx(x, y, {0xff, 0xff, 0xff, 0});
+        game->graphics.drawpx(x, y, {0xff, 0xff, 0xff, 0});
         sym = game->getkeypress();
     }
     delete game;

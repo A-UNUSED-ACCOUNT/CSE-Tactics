@@ -1,0 +1,10 @@
+{
+    "configurations": [{
+        "type": "gdb",
+        "request": "launch",
+        "name": "Launch Program",
+        "target": "./build/cse-tactic",
+        "cwd": "${workspaceRoot}",
+        "valuesFormatting": "parseText"
+    }]
+}
