@@ -4,6 +4,7 @@ class Grid_Element
 {
 public:
     Grid_Element();
+    ~Grid_Element();
+
     SDL_Texture *texture;
-    Grid_Element *surroundingelements[6];
 };
