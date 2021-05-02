@@ -18,7 +18,7 @@ add_compile_options(
 
 include_directories(include)
 
-file(GLOB source_files "src/*")
+file(GLOB source_files "src/*" "include/*")
 
 add_executable(cse-tactic ${source_files})
 

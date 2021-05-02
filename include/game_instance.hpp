@@ -2,4 +2,4 @@
 
 #include "game.hpp"
 
-Game *game;
+extern Game *game;

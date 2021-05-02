@@ -1,12 +1,7 @@
 #include "game.hpp"
 
-Game::Game() : screen_height(32), screen_width(64), shouldexit(false)
+Game::Game() : screen_height(480), screen_width(720), shouldexit(false)
 {
-    if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
-    {
-        std::cout << "Could not initialise" << std::endl;
-        shouldexit = true;
-    }
 
     for (int x = 0; x < 400; x++)
     {

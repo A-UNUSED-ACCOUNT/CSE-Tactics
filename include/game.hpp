@@ -1,9 +1,11 @@
+#pragma once
+
 #include <SDL2/SDL.h>
 #include <SDL2/SDL2_gfxPrimitives.h>
 #include <iostream>
 #include "gridelement.hpp"
 
-#define PIXEL_SIZE 8
+#define PIXEL_SIZE 1
 
 class Game
 {
