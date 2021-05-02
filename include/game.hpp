@@ -13,7 +13,7 @@ class Game
 public:
     Game();
     ~Game();
-    Grid_Element *elements[400];
+    Grid_Element elements[400];
 
     bool shouldexit;
 

@@ -1,6 +1,8 @@
 #include "main.hpp"
 #include "game_instance.hpp"
 
+Game *game;
+
 int main(int argc, char *argv[])
 {
     uint8_t x = 0;
