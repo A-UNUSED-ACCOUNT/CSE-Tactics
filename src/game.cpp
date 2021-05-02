@@ -1,7 +1,13 @@
 #include "game.hpp"
 
-Game::Game() : screen_height(32), screen_width(64)
+Game::Game() : screen_height(32), screen_width(64), shouldexit(false)
 {
+    if (SDL_Init(SDL_INIT_EVERYTHING) < 0)
+    {
+        std::cout << "Could not initialise" << std::endl;
+        shouldexit = true;
+    }
+
     for (int x = 0; x < 400; x++)
     {
         elements[x] = new Grid_Element();
@@ -15,20 +21,20 @@ Game::Game() : screen_height(32), screen_width(64)
     SDL_Delay(1000);
     if (w == nullptr)
     {
-        std::cerr << "Could not create SDL_Window instance!";
+        std::cerr << "Could not create SDL_Window instance!" << std::endl;
         return;
     }
     r = SDL_CreateRenderer(w, -1, SDL_RENDERER_ACCELERATED);
     if (r == nullptr)
     {
-        std::cerr << "Could not create SDL_Renderer instance!";
+        std::cerr << "Could not create SDL_Renderer instance!" << std::endl;
         SDL_DestroyWindow(w);
         return;
     }
     return;
 }
 
-void Game::drawpx(uint16_t x, uint16_t y, SDL_Color &c)
+void Game::drawpx(uint16_t x, uint16_t y, const SDL_Color &c)
 {
     x %= screen_width;
     y %= screen_height;
@@ -42,6 +48,7 @@ void Game::drawpx(uint16_t x, uint16_t y, SDL_Color &c)
         PIXEL_SIZE,
         PIXEL_SIZE};
     SDL_RenderFillRect(r, &pixel_rect);
+    SDL_RenderPresent(r);
 }
 
 Game::~Game()
@@ -50,4 +57,42 @@ Game::~Game()
     {
         delete elements[x];
     }
+    SDL_Quit();
+}
+
+SDL_Keysym Game::waitkeypress()
+{
+    SDL_Keysym sym;
+    sym.sym = 0;
+    while (sym.sym == 0)
+    {
+        sym = getkeypress();
+    }
+    return sym;
+}
+
+SDL_Keysym Game::getkeypress()
+{
+    SDL_Event event;
+    SDL_Keysym sym;
+    sym.sym = 0;
+    while (SDL_PollEvent(&event))
+    {
+        switch (event.type)
+        {
+        case SDL_QUIT:
+            shouldexit = true;
+            break;
+        case SDL_KEYUP:
+            break;
+        case SDL_KEYDOWN:
+            sym = event.key.keysym;
+            break;
+        case SDL_WINDOWEVENT:
+            break;
+        default:
+            break;
+        }
+    }
+    return sym;
 }
