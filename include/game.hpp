@@ -5,6 +5,7 @@
 #include <iostream>
 #include "gridelement.hpp"
 #include "graphics.hpp"
+#include "input.hpp"
 
 #define PIXEL_SIZE 1
 
@@ -14,12 +15,11 @@ public:
     Game();
     ~Game();
     Grid_Element *elements[400];
-    SDL_Keysym getkeypress();
-    SDL_Keysym waitkeypress();
 
     bool shouldexit;
 
     Graphics graphics;
+    Input input;
 
 private:
     SDL_Window *w;

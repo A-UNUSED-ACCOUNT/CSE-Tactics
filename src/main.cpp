@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     while (!game->shouldexit)
     {
         game->graphics.drawpx(x, y, {0xff, 0xff, 0xff, 0});
-        sym = game->getkeypress();
+        sym = game->input.getkeypress();
     }
     delete game;
     return EXIT_SUCCESS;
