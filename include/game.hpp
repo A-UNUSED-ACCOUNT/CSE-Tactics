@@ -1,9 +1,9 @@
 #pragma once
 
+#include "event_delegator.hpp"
 #include "graphics.hpp"
 #include "grid_element.hpp"
 #include "input.hpp"
-#include "event_delegator.hpp"
 #include <SDL2/SDL.h>
 #include <iostream>
 
@@ -18,6 +18,6 @@ class Game
     Graphics graphics;
     Input input;
     Event_delegator event_delegator;
-    
+
     Grid_Element *elements[400];
 };
