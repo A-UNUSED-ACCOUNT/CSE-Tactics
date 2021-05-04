@@ -4,5 +4,5 @@
 
 class Event_handler
 {
-     bool exec(const Event &e);
+    bool exec(const Event &e);
 };
