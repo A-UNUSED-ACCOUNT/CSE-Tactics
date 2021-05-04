@@ -1,10 +1,10 @@
 #pragma once
 
-#include "event.hpp"
-#include "event_handler.hpp"
 #include <map>
 #include <queue>
 #include <string>
+#include "event.hpp"
+#include "event_handler.hpp"
 
 class Event_delegator
 {
