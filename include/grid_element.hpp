@@ -5,7 +5,7 @@
 
 class Grid_Element
 {
-public:
+  public:
     Grid_Element();
     ~Grid_Element();
 

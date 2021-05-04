@@ -5,7 +5,7 @@
 
 class Input
 {
-public:
+  public:
     Input();
     ~Input();
     SDL_Keysym getkeypress();
