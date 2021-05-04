@@ -1,7 +1,14 @@
+#pragma once
+
+#include <array>
 #include <cstdint>
 
 class Event
 {
-public:
-  uint8_t code;
+  public:
+    enum class event_code : uint8_t
+    {
+    };
+
+    event_code code;
 };
