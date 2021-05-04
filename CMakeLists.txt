@@ -5,7 +5,7 @@ enable_language(CXX)
 project("cse-tactics")
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/contrib/sdl2-cmake")
 
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
@@ -21,7 +21,7 @@ add_compile_options(
   -Wno-unused-private-field
   -Wno-unused-parameter)
 
-include_directories(include ${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIR})
+include_directories(include ${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIR} nlohmann_json::nlohmann_json)
 
 file(GLOB source_files "src/*" "include/*")
 
