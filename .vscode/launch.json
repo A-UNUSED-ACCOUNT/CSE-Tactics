@@ -3,7 +3,7 @@
         "type": "gdb",
         "request": "launch",
         "name": "Launch Program",
-        "target": "./build/cse-tactic",
+        "target": "./build/cse-tactics",
         "cwd": "${workspaceRoot}",
         "valuesFormatting": "parseText"
     }]

@@ -5,6 +5,8 @@
 #include "grid_element.hpp"
 #include "input.hpp"
 #include <SDL2/SDL.h>
+#include <filesystem>
+#include <fstream>
 #include <iostream>
 #include <nlohmann/json.hpp>
 
