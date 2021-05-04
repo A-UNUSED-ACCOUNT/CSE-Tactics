@@ -1,1 +1,8 @@
-{}
+{
+    "files.associations": {
+        "*.json": "json",
+        "*.inc": "makefile",
+        "*.anim": "yaml",
+        "vector": "cpp"
+    }
+}
