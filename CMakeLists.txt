@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.13)
 
 enable_language(CXX)
 
-project("cse-tactic")
+project("cse-tactics")
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/cmake")
@@ -24,6 +24,6 @@ include_directories(include ${SDL2_INCLUDE_DIRS} ${SDL2IMAGE_INCLUDE_DIR})
 
 file(GLOB source_files "src/*" "include/*")
 
-add_executable(cse-tactic ${source_files})
+add_executable(cse-tactics ${source_files})
 
 target_link_libraries(cse-tactic ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
