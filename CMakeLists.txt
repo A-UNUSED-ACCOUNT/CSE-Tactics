@@ -26,4 +26,4 @@ file(GLOB source_files "src/*" "include/*")
 
 add_executable(cse-tactics ${source_files})
 
-target_link_libraries(cse-tactic ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
+target_link_libraries(cse-tactics ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
