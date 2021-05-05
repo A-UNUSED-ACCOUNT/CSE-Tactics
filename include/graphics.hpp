@@ -3,6 +3,7 @@
 #include "grid_element.hpp"
 #include <SDL2/SDL.h>
 #include <iostream>
+#include <string>
 
 class Graphics
 {
@@ -11,6 +12,7 @@ class Graphics
     ~Graphics();
     void drawpx(uint16_t x, uint16_t y, const SDL_Color &c);
     void drawelement(Grid_Element &element);
+    void drawtext(const std::string &str);
 
     SDL_Window *w;
     SDL_Renderer *r;

@@ -11,7 +11,10 @@
     },
     {
       "name": "Windows",
-      "includePath": ["${workspaceFolder}/**"],
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/usr/local/cross-tools/x86_64-w64-mingw32/include"
+      ],
       "defines": [],
       "compilerPath": "/usr/bin/x86_64-w64-mingw32-g++",
       "cStandard": "c17",

@@ -62,10 +62,17 @@ Game::Game() : shouldexit(false)
     assets = nlohmann::json::parse(filestream.str());
     asset_file.close();
 
+    // Print SDL2 version
     SDL_version sdl_version;
     SDL_GetVersion(&sdl_version);
-    std::cout << "Using SDL2 version " << sdl_version.major << "." << sdl_version.minor << "." << sdl_version.patch
+    std::cout << "Using SDL2 version " << static_cast<uint16_t>(sdl_version.major) << "."
+              << static_cast<uint16_t>(sdl_version.minor) << "." << static_cast<uint16_t>(sdl_version.patch)
               << std::endl;
+
+    // Print nlohmann/json
+    std::cout << "Using NLOHMANN JSON version " << static_cast<uint16_t>(NLOHMANN_JSON_VERSION_MAJOR) << "."
+              << static_cast<uint16_t>(NLOHMANN_JSON_VERSION_MINOR) << "."
+              << static_cast<uint16_t>(NLOHMANN_JSON_VERSION_PATCH) << std::endl;
 }
 
 Game::~Game()
