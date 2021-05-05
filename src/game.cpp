@@ -61,6 +61,11 @@ Game::Game() : shouldexit(false)
     // Parse the file
     assets = nlohmann::json::parse(filestream.str());
     asset_file.close();
+
+    SDL_version sdl_version;
+    SDL_GetVersion(&sdl_version);
+    std::cout << "Using SDL2 version " << sdl_version.major << "." << sdl_version.minor << "." << sdl_version.patch
+              << std::endl;
 }
 
 Game::~Game()
