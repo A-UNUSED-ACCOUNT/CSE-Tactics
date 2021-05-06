@@ -13,6 +13,10 @@ int main(int argc, char *argv[])
     game = new Game();
     localgame = game;
 
+    Event_test_handler test;
+    Event event;
+    game->event_delegator.register_handler(std::string("Test"), test);
+    game->event_delegator.exec(event);
     // Exists so my debugger is forced to show it
     while (!localgame->shouldexit)
     {

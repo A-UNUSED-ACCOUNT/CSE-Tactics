@@ -10,7 +10,7 @@
       "intelliSenseMode": "linux-gcc-x64"
     },
     {
-      "name": "Windows",
+      "name": "Windows x64",
       "includePath": [
         "${workspaceFolder}/**",
         "/usr/local/cross-tools/x86_64-w64-mingw32/include"
@@ -20,6 +20,18 @@
       "cStandard": "c17",
       "cppStandard": "c++17",
       "intelliSenseMode": "windows-gcc-x64"
+    },
+    {
+      "name": "Windows x86",
+      "includePath": [
+        "${workspaceFolder}/**",
+        "/usr/local/cross-tools/i686-w64-mingw32/include"
+      ],
+      "defines": [],
+      "compilerPath": "/usr/bin/i686-w64-mingw32-g++",
+      "cStandard": "c17",
+      "cppStandard": "c++17",
+      "intelliSenseMode": "windows-gcc-x86"
     }
   ],
   "version": 4
