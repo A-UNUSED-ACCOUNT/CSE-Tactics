@@ -19,11 +19,11 @@ endif(PLATFORM STREQUAL "WINDOWS-X86")
 
 project("cse-tactics")
 
+add_subdirectory(contrib/sdl2)
+
 enable_language(CXX)
 
 set(CMAKE_CXX_STANDARD 17)
-set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH}
-                      "${PROJECT_SOURCE_DIR}/contrib/sdl2-cmake")
 
 find_package(SDL2 REQUIRED)
 # find_package(SDL2_image REQUIRED)
@@ -46,4 +46,4 @@ file(GLOB source_files "src/*" "include/*")
 
 add_executable(cse-tactics ${source_files})
 
-target_link_libraries(cse-tactics SDL2 nlohmann_json::nlohmann_json stdc++fs)
+target_link_libraries(cse-tactics SDL2 SDL2main nlohmann_json::nlohmann_json stdc++fs)
