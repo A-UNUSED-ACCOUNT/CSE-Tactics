@@ -19,6 +19,10 @@ endif(PLATFORM STREQUAL "WINDOWS-X86")
 
 project("cse-tactics")
 
+if(MINGW)
+   set(THREADS_USE_PTHREADS_WIN32 true)
+endif()
+
 enable_language(CXX)
 
 set(CMAKE_CXX_STANDARD 17)
