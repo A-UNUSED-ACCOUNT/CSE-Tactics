@@ -19,8 +19,6 @@ endif(PLATFORM STREQUAL "WINDOWS-X86")
 
 project("cse-tactics")
 
-add_subdirectory(contrib/sdl2)
-
 enable_language(CXX)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -29,6 +27,7 @@ find_package(SDL2 REQUIRED)
 # find_package(SDL2_image REQUIRED)
 
 add_subdirectory(contrib/json)
+add_subdirectory(contrib/sdl2)
 
 add_compile_options(
   -Wall
