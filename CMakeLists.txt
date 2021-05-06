@@ -2,6 +2,11 @@ cmake_minimum_required(VERSION 3.13)
 
 option(PLATFORM "Set the target platform")
 
+if(PLATFORM STREQUAL "LINUX-X86")
+  set(CMAKE_C_COMPILER "i686-linux-gnu-gcc")
+  set(CMAKE_CXX_COMPILER "i686-linux-gnu-g++")
+endif(PLATFORM STREQUAL "LINUX-X86")
+
 if(PLATFORM STREQUAL "LINUX-X64")
   set(CMAKE_C_COMPILER "x86_64-linux-gnu-gcc")
   set(CMAKE_CXX_COMPILER "x86_64-linux-gnu-g++")
