@@ -9,3 +9,6 @@ url = https://github.com/Cerulean-Shot-Entertainment/CSE-Tactics-Assets
 [submodule "contrib/sdl2-cmake"]
 path = contrib/sdl2-cmake
 url = https://github.com/aminosbh/sdl2-cmake-modules
+[submodule "contrib/sdl2"]
+	path = contrib/sdl2
+	url = https://github.com/libsdl-org/SDL
