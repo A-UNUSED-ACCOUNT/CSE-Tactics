@@ -2,10 +2,10 @@ cmake_minimum_required(VERSION 3.13)
 
 option(PLATFORM "Set the target platform")
 
-if(PLATFORM STREQUAL "LINUX")
-  set(CMAKE_C_COMPILER "gcc")
-  set(CMAKE_CXX_COMPILER "g++")
-endif(PLATFORM STREQUAL "LINUX")
+if(PLATFORM STREQUAL "LINUX-X64")
+  set(CMAKE_C_COMPILER "x86_64-linux-gnu-gcc")
+  set(CMAKE_CXX_COMPILER "x86_64-linux-gnu-g++")
+endif(PLATFORM STREQUAL "LINUX-X64")
 
 if(PLATFORM STREQUAL "WINDOWS-X64")
   set(CMAKE_C_COMPILER "x86_64-w64-mingw32-gcc")
@@ -18,10 +18,6 @@ if(PLATFORM STREQUAL "WINDOWS-X86")
 endif(PLATFORM STREQUAL "WINDOWS-X86")
 
 project("cse-tactics")
-
-if(MINGW)
-   set(THREADS_USE_PTHREADS_WIN32 true)
-endif()
 
 enable_language(CXX)
 

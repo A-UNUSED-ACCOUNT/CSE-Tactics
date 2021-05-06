@@ -18,7 +18,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  cse-tactics-linux-build:
+  cse-tactics-linux-x64-build:
     needs: [clean-releases]
     runs-on: ubuntu-latest
     container:
@@ -28,7 +28,7 @@ jobs:
         with:
           submodules: "recursive"
       - name: Compile Test
-        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. && make
+        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=LINUX-X64 && make
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -36,7 +36,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: cse-tactics-linux
-          release_name: Linux Release
+          release_name: Linux X64 Release
           draft: false
           prerelease: true
           body: |
