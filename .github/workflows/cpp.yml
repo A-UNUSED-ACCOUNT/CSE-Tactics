@@ -119,6 +119,16 @@ jobs:
           asset_path: ./build/cse-tactics.exe
           asset_name: cse-tactics.exe
           asset_content_type: application/zip
+          
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/contrib/sdl2/CMakeFiles/SDL2.dir/SDL2.dll
+          asset_name: SDL2.dll
+          asset_content_type: application/zip
   
   windows-x64-build:
     needs: [clean-releases]
@@ -152,5 +162,15 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: ./build/cse-tactics.exe
           asset_name: cse-tactics.exe
+          asset_content_type: application/zip
+  
+      - name: Upload Release Asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./build/contrib/sdl2/CMakeFiles/SDL2.dir/SDL2.dll
+          asset_name: SDL2.dll
           asset_content_type: application/zip
 
