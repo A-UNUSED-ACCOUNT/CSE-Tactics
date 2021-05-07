@@ -11,6 +11,8 @@ A turn based RPG in SDL2
 
 You do not have to compile nor install SDL2 yourself, because the toolchain has a copy of SDL2 in tree
 
+This allows for bleeding edge SDL2
+
 To cross compile, simply pass in `cmake . -DPLATFORM={os}-{arch}`
 
 Supported archs:
