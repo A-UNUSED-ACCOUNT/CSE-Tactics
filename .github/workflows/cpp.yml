@@ -28,7 +28,7 @@ jobs:
         with:
           submodules: "recursive"
       - name: Compile Test
-        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=LINUX-X64 && make
+        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=LINUX-X64 && make -j$(nproc)
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -62,7 +62,7 @@ jobs:
         with:
           submodules: "recursive"
       - name: Compile Test
-        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=LINUX-X64 && make
+        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=LINUX-X64 && make -j$(nproc)
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -96,7 +96,7 @@ jobs:
         with:
           submodules: "recursive"
       - name: Compile Test
-        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=WINDOWS-X86 && make
+        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=WINDOWS-X86 && make -j$(nproc)
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -140,7 +140,7 @@ jobs:
         with:
           submodules: "recursive"
       - name: Compile Test
-        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=WINDOWS-X64 && make
+        run: cd $GITHUB_WORKSPACE && mkdir build && cd build && cmake .. -DPLATFORM=WINDOWS-X64 && make -j$(nproc)
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
