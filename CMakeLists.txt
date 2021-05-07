@@ -28,6 +28,20 @@ if(PLATFORM STREQUAL "LINUX-X64")
   set(CMAKE_SYSTEM_NAME Linux)
 endif(PLATFORM STREQUAL "LINUX-X64")
 
+# Linux Armeabi
+if(PLATFORM STREQUAL "LINUX-ARMEABI")
+  set(CMAKE_C_COMPILER "arm-linux-gnueabi-gcc")
+  set(CMAKE_CXX_COMPILER "arm-linux-gnueabi-g++")
+  set(CMAKE_SYSTEM_NAME Linux)
+endif(PLATFORM STREQUAL "LINUX-ARMEABI")
+
+# Linux Armeabihf
+if(PLATFORM STREQUAL "LINUX-ARMHF")
+  set(CMAKE_C_COMPILER "arm-linux-gnueabihf-gcc")
+  set(CMAKE_CXX_COMPILER "arm-linux-gnueabihf-g++")
+  set(CMAKE_SYSTEM_NAME Linux)
+endif(PLATFORM STREQUAL "LINUX-ARMHF")
+
 # Windows x64
 if(PLATFORM STREQUAL "WINDOWS-X64")
   set(CMAKE_C_COMPILER "x86_64-w64-mingw32-gcc")
