@@ -1,7 +1,7 @@
 #pragma once
 
 #include "grid_element.hpp"
-#include <SDL.h>
+#include "SDL.h"
 #include <iostream>
 #include <string>
 
