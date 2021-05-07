@@ -21,6 +21,8 @@ jobs:
   cse-tactics-linux-x64-build:
     needs: [clean-releases]
     runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/sdl2-docker:latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -39,7 +41,7 @@ jobs:
           prerelease: true
           body: |
             Check commits for changes
-
+    
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
@@ -53,6 +55,8 @@ jobs:
   cse-tactics-linux-x86-build:
     needs: [clean-releases]
     runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/sdl2-docker:latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -85,6 +89,8 @@ jobs:
   cse-tactics-windows-x86-build:
     needs: [clean-releases]
     runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/sdl2-docker:latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -103,7 +109,7 @@ jobs:
           prerelease: true
           body: |
             Check commits for changes
-
+    
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
@@ -113,10 +119,12 @@ jobs:
           asset_path: ./build/cse-tactics
           asset_name: cse-tactics.exe
           asset_content_type: application/zip
-
+  
   cse-tactics-windows-x64-build:
     needs: [clean-releases]
     runs-on: ubuntu-latest
+    container:
+      image: tsukisuperior/sdl2-docker:latest
     steps:
       - uses: actions/checkout@v2
         with:
@@ -135,7 +143,7 @@ jobs:
           prerelease: true
           body: |
             Check commits for changes
-
+    
       - name: Upload Release Asset
         uses: actions/upload-release-asset@v1
         env:
@@ -145,3 +153,4 @@ jobs:
           asset_path: ./build/cse-tactics
           asset_name: cse-tactics.exe
           asset_content_type: application/zip
+
