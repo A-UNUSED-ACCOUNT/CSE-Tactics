@@ -35,7 +35,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: cse-tactics-linux
+          tag_name: cse-tactics-linux-x64
           release_name: Linux X64 Release
           draft: false
           prerelease: true
@@ -69,7 +69,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: cse-tactics-linux
+          tag_name: cse-tactics-linux-x86
           release_name: Linux X86 Release
           draft: false
           prerelease: true
