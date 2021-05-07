@@ -46,7 +46,7 @@ set(CMAKE_FIND_ROOT_PATH_MODE_LIBRARY ONLY)
 add_subdirectory(contrib/json)
 add_subdirectory(contrib/sdl2)
 
-file(GLOB source_files "src/*" "include/*")
+file(GLOB source_files "${CMAKE_SOURCE_DIR}/src/*" "${CMAKE_SOURCE_DIR}/include/*")
 
 add_executable(cse-tactics ${source_files})
 
@@ -61,7 +61,13 @@ target_compile_options(
          -Wno-unused-private-field
          -Wno-unused-parameter)
 
-include_directories("include" "contrib/sdl2/include")
+include_directories("${CMAKE_SOURCE_DIR}/include" "${CMAKE_SOURCE_DIR}/contrib/sdl2/include")
+
+if(MINGW)
+  target_link_options(cse-tactics PUBLIC -lmingw32)
+endif()
+
+target_link_options(cse-tactics PUBLIC -L${CMAKE_SOURCE_DIR}/build/contrib/sdl2 -lSDL2 -lSDL2main)
 
 target_link_libraries(cse-tactics SDL2 SDL2main nlohmann_json::nlohmann_json
                       stdc++fs)
