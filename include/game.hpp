@@ -4,7 +4,7 @@
 #include "graphics.hpp"
 #include "grid_element.hpp"
 #include "input.hpp"
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include <filesystem>
 #include <fstream>
 #include <iostream>

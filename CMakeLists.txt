@@ -62,7 +62,7 @@ target_compile_options(
   -Wno-unused-private-field
   -Wno-unused-parameter)
 
-include_directories(include SDL2)
+include_directories("include" "contrib/sdl2/include")
 
 target_link_libraries(cse-tactics SDL2 SDL2main nlohmann_json::nlohmann_json
                       stdc++fs)
