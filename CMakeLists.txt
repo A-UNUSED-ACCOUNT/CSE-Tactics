@@ -52,17 +52,21 @@ add_executable(cse-tactics ${source_files})
 
 target_compile_options(
   cse-tactics
-  PUBLIC
-  -Wall
-  -Wextra
-  -Werror
-  -pedantic
-  -ggdb
-  -Wno-unused-variable
-  -Wno-unused-private-field
-  -Wno-unused-parameter)
+  PUBLIC -Wall
+         -Wextra
+         -Werror
+         -pedantic
+         -ggdb
+         -Wno-unused-variable
+         -Wno-unused-private-field
+         -Wno-unused-parameter)
 
 include_directories("include" "contrib/sdl2/include")
 
-target_link_libraries(cse-tactics SDL2 SDL2main nlohmann_json::nlohmann_json
+if(MINGW)
+  target_link_options(cse-tactics PUBLIC -lmingw32)
+endif()
+
+target_link_options(cse-tactics PUBLIC -lSDLmain -lSDL2)
+target_link_libraries(cse-tactics nlohmann_json::nlohmann_json
                       stdc++fs)
