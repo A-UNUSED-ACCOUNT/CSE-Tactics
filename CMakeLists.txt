@@ -11,11 +11,13 @@ option(PLATFORM "Set the target platform")
 if(PLATFORM STREQUAL "LINUX-X86")
   set(CMAKE_C_COMPILER "i686-linux-gnu-gcc")
   set(CMAKE_CXX_COMPILER "i686-linux-gnu-g++")
+  set(CMAKE_SYSTEM_NAME Linux)
 endif(PLATFORM STREQUAL "LINUX-X86")
 
 if(PLATFORM STREQUAL "LINUX-X64")
   set(CMAKE_C_COMPILER "x86_64-linux-gnu-gcc")
   set(CMAKE_CXX_COMPILER "x86_64-linux-gnu-g++")
+  set(CMAKE_SYSTEM_NAME Linux)
 endif(PLATFORM STREQUAL "LINUX-X64")
 
 if(PLATFORM STREQUAL "WINDOWS-X64")
@@ -60,6 +62,7 @@ target_compile_options(
          -Werror
          -pedantic
          -ggdb
+         -Os
          -Wno-unused-variable
          -Wno-unused-private-field
          -Wno-unused-parameter)
