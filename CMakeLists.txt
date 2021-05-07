@@ -1,25 +1,34 @@
 # This makefile builds and pulls the executables out of the SDL2 build tree
 # without installing, and has easy multiplatform support Only works with
-# GCC-like compilers
+# GCC-like compilers, and only tested on GCC
 
 cmake_minimum_required(VERSION 3.13)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/contrib/sdl2")
 
-option(PLATFORM "Set the target platform")
+option(PLATFORM "Set the target platform" NATIVE)
 
+# Guesses the compiler from the native system
+if(PLATFORM STREQUAL "NATIVE")
+  set(CMAKE_C_COMPILER "cc")
+  set(CMAKE_CXX_COMPILER "c++")
+endif(PLATFORM STREQUAL "NATIVE")
+
+# Linux x86
 if(PLATFORM STREQUAL "LINUX-X86")
   set(CMAKE_C_COMPILER "i686-linux-gnu-gcc")
   set(CMAKE_CXX_COMPILER "i686-linux-gnu-g++")
   set(CMAKE_SYSTEM_NAME Linux)
 endif(PLATFORM STREQUAL "LINUX-X86")
 
+# Linux x64
 if(PLATFORM STREQUAL "LINUX-X64")
   set(CMAKE_C_COMPILER "x86_64-linux-gnu-gcc")
   set(CMAKE_CXX_COMPILER "x86_64-linux-gnu-g++")
   set(CMAKE_SYSTEM_NAME Linux)
 endif(PLATFORM STREQUAL "LINUX-X64")
 
+# Windows x64
 if(PLATFORM STREQUAL "WINDOWS-X64")
   set(CMAKE_C_COMPILER "x86_64-w64-mingw32-gcc")
   set(CMAKE_CXX_COMPILER "x86_64-w64-mingw32-g++")
@@ -28,6 +37,7 @@ if(PLATFORM STREQUAL "WINDOWS-X64")
   set(CMAKE_SYSTEM_NAME Windows)
 endif(PLATFORM STREQUAL "WINDOWS-X64")
 
+# Windows x86
 if(PLATFORM STREQUAL "WINDOWS-X86")
   set(CMAKE_C_COMPILER "i686-w64-mingw32-gcc")
   set(CMAKE_CXX_COMPILER "i686-w64-mingw32-g++")
@@ -37,6 +47,7 @@ if(PLATFORM STREQUAL "WINDOWS-X86")
 endif(PLATFORM STREQUAL "WINDOWS-X86")
 
 project("cse-tactics")
+message("${PLATFORM}")
 
 enable_language(CXX)
 
