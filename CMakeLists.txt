@@ -63,10 +63,5 @@ target_compile_options(
 
 include_directories("include" "contrib/sdl2/include")
 
-if(MINGW)
-  target_link_options(cse-tactics PUBLIC -lmingw32)
-endif()
-
-target_link_options(cse-tactics PUBLIC -lSDLmain -lSDL2)
-target_link_libraries(cse-tactics nlohmann_json::nlohmann_json
+target_link_libraries(cse-tactics SDL2 SDL2main nlohmann_json::nlohmann_json
                       stdc++fs)
