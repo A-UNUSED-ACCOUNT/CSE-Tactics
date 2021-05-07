@@ -1,10 +1,10 @@
 #pragma once
 
+#include "SDL.h"
 #include "event_delegator.hpp"
 #include "graphics.hpp"
 #include "grid_element.hpp"
 #include "input.hpp"
-#include "SDL.h"
 #include <filesystem>
 #include <fstream>
 #include <iostream>
