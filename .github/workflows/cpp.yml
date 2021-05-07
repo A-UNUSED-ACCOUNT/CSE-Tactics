@@ -126,7 +126,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/contrib/sdl2/CMakeFiles/SDL2.dir/SDL2.dll
+          asset_path: ./build/contrib/sdl2/SDL2.dll
           asset_name: SDL2.dll
           asset_content_type: application/zip
   
@@ -170,7 +170,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./build/contrib/sdl2/CMakeFiles/SDL2.dir/SDL2.dll
+          asset_path: ./build/contrib/sdl2/SDL2.dll
           asset_name: SDL2.dll
           asset_content_type: application/zip
 
