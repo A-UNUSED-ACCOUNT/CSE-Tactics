@@ -82,7 +82,7 @@ include_directories("${CMAKE_SOURCE_DIR}/include"
                     "${CMAKE_SOURCE_DIR}/contrib/sdl2/include")
 
 if(MINGW)
-  target_link_options(cse-tactics PUBLIC -lmingw32 -static-libgcc -static-libstdc++)
+  target_link_options(cse-tactics PUBLIC -lmingw32)
 endif()
 
 target_link_options(cse-tactics PUBLIC -L${CMAKE_SOURCE_DIR}/build/contrib/sdl2
