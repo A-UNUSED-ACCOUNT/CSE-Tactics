@@ -18,6 +18,11 @@ Supported archs:
 - X86
 - X64
 
+Archs for Linux only:
+
+- ARMHF
+- ARMEABI
+
 Supported Operating Systems:
 
 - LINUX
